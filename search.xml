@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[项目笔记一]]></title>
+    <url>%2F2017%2F07%2F31%2Fproject-one%2F</url>
+    <content type="text"><![CDATA[一、Spring MVC JSON数据中文乱码问题在SpringMVC配置文件中添加消息转换器12345678&lt;mvc:annotation-driven&gt; &lt;!-- 消息转换器 json ajax乱码--&gt; &lt;mvc:message-converters register-defaults=&quot;true&quot;&gt; &lt;bean class=&quot;org.springframework.http.converter.StringHttpMessageConverter&quot;&gt; &lt;property name=&quot;supportedMediaTypes&quot; value=&quot;text/html;charset=UTF-8&quot;/&gt; &lt;/bean&gt; &lt;/mvc:message-converters&gt; &lt;/mvc:annotation-driven&gt; 二、JSON日期格式的转换(数据库有关时间字段类型为date或datetime)解决方法 数据库转换 MySQL 12DATE_FORMAT(date,format);select DATE_FORMAT(now(),&apos;%Y-%m-%d %H:%i:%s&apos;) from dual; Oracle 12to_char();select to_char(sysdate,&apos;yyyy-mm-dd hh24:mi:ss&apos;) from dual; SQL Server 1Select CONVERT(varchar(100), GETDATE(), 20); 实体类转换 JSON时间格式1&#123;&quot;date&quot;:18,&quot;day&quot;:2,&quot;hours&quot;:15,&quot;minutes&quot;:31,&quot;month&quot;:6,&quot;seconds&quot;:34,&quot;time&quot;:1500363094673,&quot;timezoneOffset&quot;:-480,&quot;year&quot;:117&#125; 引入jar 123456&lt;dependency&gt; &lt;groupId&gt;net.sf.json-lib&lt;/groupId&gt; &lt;artifactId&gt;json-lib&lt;/artifactId&gt; &lt;version&gt;2.4&lt;/version&gt; &lt;classifier&gt;jdk15&lt;/classifier&gt;&lt;/dependency&gt; ​ 创建工具类 1234567891011121314151617181920212223public class DateUtils implements JsonValueProcessor&#123; private static String pattern = &quot;yyyy-MM-dd HH:mm:ss&quot;; @Override public Object processArrayValue(Object arg0, JsonConfig arg1) &#123; // TODO Auto-generated method stub return process(arg0); &#125; @Override public Object processObjectValue(String arg0, Object arg1, JsonConfig arg2) &#123; // TODO Auto-generated method stub return process(arg1); &#125; private Object process(Object value)&#123; if(value instanceof Date)&#123; SimpleDateFormat sdf = new SimpleDateFormat(pattern, Locale.UK); return sdf.format(value); &#125; return value == null ? &quot;&quot; : value.toString(); &#125; &#125; 调用 12345JsonConfig config = new JsonConfig();DateUtils dateUtils = new DateUtils();config.registerJsonValueProcessor(Date.class, dateUtils);JSONArray array = new JSONArray();array=array.fromObject(List集合, config); ​]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>ajax</tag>
+        <tag>springMVC</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2F2017%2F07%2F28%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>

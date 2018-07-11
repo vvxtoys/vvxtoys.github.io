@@ -4,6 +4,80 @@
 
     
   <url>
+    <loc>http://vvxtoys.cc/2018/07/11/vgenerator2/</loc>
+    <lastmod>2018-07-11T11:03:55.360Z</lastmod>
+    <data>
+        <display>
+        <title>vgenerator2</title>
+        <pubTime>2018-07-11T06:00:11.000Z</pubTime>
+        
+        <tag>utils</tag>
+         
+        <tag>generator</tag>
+         
+        <tag>mybatis</tag>
+         
+        <tag>mysql</tag>
+         
+         
+           
+             
+              <breadCrumb title="Project" url="http://vvxtoys.cc/categories/Project/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://vvxtoys.cc/2018/07/11/vgenerator3/</loc>
+    <lastmod>2018-07-11T11:03:54.427Z</lastmod>
+    <data>
+        <display>
+        <title>vgenerator3</title>
+        <pubTime>2018-07-11T06:00:26.000Z</pubTime>
+        
+        <tag>utils</tag>
+         
+        <tag>generator</tag>
+         
+        <tag>mybatis</tag>
+         
+         
+           
+             
+              <breadCrumb title="Project" url="http://vvxtoys.cc/categories/Project/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://vvxtoys.cc/2018/07/11/vgenerator1/</loc>
+    <lastmod>2018-07-11T11:03:53.244Z</lastmod>
+    <data>
+        <display>
+        <title>vgenerator1</title>
+        <pubTime>2018-07-11T05:59:47.000Z</pubTime>
+        
+        <tag>utils</tag>
+         
+        <tag>generator</tag>
+         
+        <tag>mybatis</tag>
+         
+         
+           
+             
+              <breadCrumb title="Project" url="http://vvxtoys.cc/categories/Project/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://vvxtoys.cc/2018/07/10/poi-simpleDemo/</loc>
     <lastmod>2018-07-11T03:25:24.210Z</lastmod>
     <data>
@@ -75,9 +149,9 @@
         <title>自动生成构造方法、getter、setter</title>
         <pubTime>2018-07-10T14:01:25.000Z</pubTime>
         
-        <tag>demo</tag>
-         
         <tag>generator</tag>
+         
+        <tag>demo</tag>
          
          
            

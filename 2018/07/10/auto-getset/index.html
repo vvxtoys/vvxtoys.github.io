@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="利用反射自动生成getter、setter、constructor 写个模板类  123456789101112131415161718192021222324package common;public class Templates &amp;#123;		public static final String T_CLASS 		= &quot;package &amp;#123;0&amp;#125;;\n\n&amp;#123;1&amp;">
+<meta name="description" content="利用反射自动生成getter、setter、constructor 写个模板类 123456789101112131415161718192021222324package common;public class Templates &amp;#123;		public static final String T_CLASS 		= &quot;package &amp;#123;0&amp;#125;;\n\n&amp;#123;1&amp;#">
 <meta name="keywords" content="generator">
 <meta property="og:type" content="article">
 <meta property="og:title" content="自动生成构造方法、getter、setter">
 <meta property="og:url" content="http://vvxtoys.cc/2018/07/10/auto-getset/index.html">
 <meta property="og:site_name" content="vvxtoys&#39;s Blog">
-<meta property="og:description" content="利用反射自动生成getter、setter、constructor 写个模板类  123456789101112131415161718192021222324package common;public class Templates &amp;#123;		public static final String T_CLASS 		= &quot;package &amp;#123;0&amp;#125;;\n\n&amp;#123;1&amp;">
+<meta property="og:description" content="利用反射自动生成getter、setter、constructor 写个模板类 123456789101112131415161718192021222324package common;public class Templates &amp;#123;		public static final String T_CLASS 		= &quot;package &amp;#123;0&amp;#125;;\n\n&amp;#123;1&amp;#">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-10T14:05:32.345Z">
+<meta property="og:updated_time" content="2018-07-10T17:05:05.441Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自动生成构造方法、getter、setter">
-<meta name="twitter:description" content="利用反射自动生成getter、setter、constructor 写个模板类  123456789101112131415161718192021222324package common;public class Templates &amp;#123;		public static final String T_CLASS 		= &quot;package &amp;#123;0&amp;#125;;\n\n&amp;#123;1&amp;">
+<meta name="twitter:description" content="利用反射自动生成getter、setter、constructor 写个模板类 123456789101112131415161718192021222324package common;public class Templates &amp;#123;		public static final String T_CLASS 		= &quot;package &amp;#123;0&amp;#125;;\n\n&amp;#123;1&amp;#">
 
 
 
@@ -433,11 +433,11 @@
 
       
         <h5 id="利用反射自动生成getter、setter、constructor"><a href="#利用反射自动生成getter、setter、constructor" class="headerlink" title="利用反射自动生成getter、setter、constructor"></a>利用反射自动生成getter、setter、constructor</h5><ul>
-<li>写个模板类</li>
-</ul>
+<li><p>写个模板类</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> common;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Templates</span> </span>&#123;</div><div class="line">	</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String T_CLASS 		= <span class="string">"package &#123;0&#125;;\n\n&#123;1&#125;public class &#123;2&#125; &#123;\n\n&#123;3&#125;\n\n&#123;5&#125;\n\n&#123;4&#125;\n&#125;"</span>;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String T_GET   		= <span class="string">"\tpublic &#123;0&#125; get&#123;1&#125; () &#123;\n\t\treturn &#123;2&#125;;\n\t&#125;\n"</span>;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String T_SET   		= <span class="string">"\tpublic void set&#123;0&#125;(&#123;1&#125; &#123;2&#125;) &#123;\n\t\tthis.&#123;2&#125;=&#123;2&#125;;\n\t&#125;\n"</span>;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String T_ATTR1  	= <span class="string">"\tprivate &#123;0&#125; &#123;1&#125;;\n"</span>;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String T_ATTR2  	= <span class="string">"\t\tthis.&#123;0&#125;=&#123;0&#125;;\n"</span>;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String T_IMPORT 	= <span class="string">"import java.util.Date;\n\n"</span>;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String T_CONSTRUCT 	= <span class="string">"\tpublic &#123;0&#125;(&#123;1&#125;) &#123;\n\t\tsuper();\n&#123;2&#125;\n\t&#125;\n"</span>;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">format</span><span class="params">(String pattern, String ... arguments)</span></span>&#123;</div><div class="line">		String format = pattern;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;arguments.length;i++)&#123;</div><div class="line">			format = format.replace(<span class="string">"&#123;"</span>+i+<span class="string">"&#125;"</span>,arguments[i]);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> format;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">loadTemplate</span><span class="params">(String clazz,String pack,String port,</span></span></div><div class="line"><span class="function"><span class="params">							String attrs,String get_set,String construct)</span></span>&#123;</div><div class="line">		<span class="keyword">return</span> format(T_CLASS, clazz,pack,port,attrs,get_set,construct);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>创建一个实体类</li>
+</li>
+<li><p>创建一个实体类</p>
+</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> cc.vvxtoys.pojo;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> id;</div><div class="line">	<span class="keyword">private</span> String name;</div><div class="line">	<span class="keyword">private</span> String sex;</div><div class="line">	<span class="keyword">private</span> String school;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>

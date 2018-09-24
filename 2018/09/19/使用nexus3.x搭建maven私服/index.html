@@ -111,7 +111,7 @@
 <meta property="og:image" content="https://i.loli.net/2018/09/19/5ba2621c14d0b.png">
 <meta property="og:image" content="https://i.loli.net/2018/09/19/5ba2634c00802.png">
 <meta property="og:image" content="https://i.loli.net/2018/09/19/5ba263e5c1765.png">
-<meta property="og:updated_time" content="2018-09-19T15:07:27.178Z">
+<meta property="og:updated_time" content="2018-09-24T09:08:42.961Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用nexus3.x搭建maven私服">
 <meta name="twitter:description" content="前言  好久之前就想搭建maven仓库了，一直拖到了现在，也就是懒得动，现在终于是要付诸行动了。网上查了不少资料，好多博客都是关于2.x的搭建，我下载的是最新版的nexus，好多教程已经不能使用，以此记录我的踩坑搭建之路。">
@@ -216,7 +216,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">v&t</p>
+        <p class="site-subtitle"></p>
       
   </div>
 
@@ -400,8 +400,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/Server/" itemprop="url" rel="index">
+                    <span itemprop="name">Server</span>
                   </a>
                 </span>
 
@@ -457,7 +457,7 @@
 
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>  好久之前就想搭建maven仓库了，一直拖到了现在，也就是懒得动，现在终于是要付诸行动了。网上查了不少资料，好多博客都是关于2.x的搭建，我下载的是最新版的nexus，好多教程已经不能使用，以此记录我的踩坑搭建之路。</p>
-<a id="more"></a>
+  <a id="more"></a>
 <h2 id="安装环境和需要的软件"><a href="#安装环境和需要的软件" class="headerlink" title="安装环境和需要的软件"></a>安装环境和需要的软件</h2><ul>
 <li>Centos 7</li>
 <li>Java 1.8 </li>
@@ -468,9 +468,13 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1.rpm -qa|grep java 查找</div><div class="line">2.rpm -e --nodeps xxxx 卸载openjdk</div></pre></td></tr></table></figure>
 <ul>
+<li>下载jdk</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget --no-check-certificate --no-cookies --header &quot;Cookie: oraclelicense=accept-securebackup-cookie&quot; &quot;http://download.oracle.com/otn-pub/java/jdk/8u181-b13/96a7b8442fe848ef90c96a2fad6ed6d1/jdk-8u181-linux-x64.tar.gz&quot;</div></pre></td></tr></table></figure>
+<ul>
 <li>安装</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">1.oracle下载Java 1.8</div><div class="line">2.mkdir /usr/java 在/usr下建立Java文件夹</div><div class="line">3.上传下载好的jdk到这里</div><div class="line">4.tar -xzvf xxxx 解压</div><div class="line">5.mv xxxx jdk1.8</div><div class="line">6.vim /etc/profile</div><div class="line">7.设置环境变量</div><div class="line">JAVA_HOME=/usr/java/jdk1.8</div><div class="line">JRE_HOME=/usr/java/jdk1.8/jre</div><div class="line">PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin</div><div class="line">CLASSPARH=,:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib</div><div class="line">export JAVA_HOME JRE_HOME PARH CLASSPATH</div><div class="line">分隔符是冒号不是分号</div><div class="line">8.source /etc/profile 使环境变量生效</div><div class="line">9.java -version 查看Java版本</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">1.mkdir /usr/java 在/usr下建立Java文件夹</div><div class="line">2.mv jdk-8u181-linux-x64.tar.gz /usr/java/jdk-8u181-linux-x64.tar.gz</div><div class="line">3.tar -xzvf jdk-8u181-linux-x64.tar.gz 解压</div><div class="line">4.mv jdk1.8.0_181/ jdk1.8</div><div class="line">5.vim /etc/profile</div><div class="line">6.设置环境变量</div><div class="line">JAVA_HOME=/usr/java/jdk1.8</div><div class="line">JRE_HOME=/usr/java/jdk1.8/jre</div><div class="line">PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin</div><div class="line">CLASSPARH=,:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib</div><div class="line">export JAVA_HOME JRE_HOME PATH CLASSPATH</div><div class="line">分隔符是冒号不是分号</div><div class="line">7.source /etc/profile 使环境变量生效</div><div class="line">8.java -version 查看Java版本</div></pre></td></tr></table></figure>
 <h2 id="Nexus安装"><a href="#Nexus安装" class="headerlink" title="Nexus安装"></a>Nexus安装</h2><ul>
 <li>创建文件夹</li>
 </ul>
@@ -494,7 +498,7 @@
 <ul>
 <li>开放端口 root用户</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">1.查看防火墙状态</div><div class="line">firewall-cmd --state</div><div class="line">2.如果关闭开启防火墙</div><div class="line">systemctl start firewalld.service</div><div class="line">3.开放5743端口(以自己的配置为准)</div><div class="line">firewall-cmd --zone=public --add-port=5743/tcp --permanent </div><div class="line">4.重启防火墙</div><div class="line">systemctl restart firewalld.service</div><div class="line">5.重新加载</div><div class="line">firewall-cmd --reload</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">1.查看防火墙状态</div><div class="line">firewall-cmd --state</div><div class="line">2.如果关闭开启防火墙</div><div class="line">systemctl start firewalld.service</div><div class="line">3.开放5743端口(以自己的配置为准)</div><div class="line">firewall-cmd --zone=public --add-port=5743/tcp --permanent </div><div class="line">4.重新加载</div><div class="line">firewall-cmd --reload</div><div class="line">5.重启防火墙</div><div class="line">systemctl restart firewalld.service</div></pre></td></tr></table></figure>
 <ul>
 <li><p>启动nexus</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">cd nexus-3.13.0-01/bin</div><div class="line">./nexus start</div><div class="line">常用命令</div><div class="line">./nexus restart</div><div class="line">./nexus stop</div></pre></td></tr></table></figure>
@@ -514,7 +518,7 @@
 <p>到这里线上就配置完成了</p>
 </li>
 </ul>
-<h3 id="配置Maven"><a href="#配置Maven" class="headerlink" title="配置Maven"></a>配置Maven</h3><ul>
+<h2 id="配置Maven"><a href="#配置Maven" class="headerlink" title="配置Maven"></a>配置Maven</h2><ul>
 <li>找到setting.xml 在mirrors中添加mirror</li>
 </ul>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">mirror</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">id</span>&gt;</span>nexus<span class="tag">&lt;/<span class="name">id</span></span></div><div class="line">	&lt;mirrorOf&gt;*&lt;/mirrorOf&gt;</div><div class="line">	<span class="tag">&lt;<span class="name">name</span>&gt;</span>central repository<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">url</span>&gt;</span>http://ip:端口/repository/maven-public/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -530,7 +534,7 @@
 <li>激活profile</li>
 </ul>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">activeProfiles</span>&gt;</span></div><div class="line"><span class="comment">&lt;!--profile下的id--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">activeProfile</span>&gt;</span>nexus<span class="tag">&lt;/<span class="name">activeProfile</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">activeProfiles</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="上传jar-发布项目"><a href="#上传jar-发布项目" class="headerlink" title="上传jar 发布项目"></a>上传jar 发布项目</h3><ul>
+<h2 id="上传jar-发布项目"><a href="#上传jar-发布项目" class="headerlink" title="上传jar 发布项目"></a>上传jar 发布项目</h2><ul>
 <li>网页上传jar  upload</li>
 </ul>
 <p><img src="https://i.loli.net/2018/09/19/5ba2621c14d0b.png" alt=""></p>
@@ -605,8 +609,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/11/vgenerator3/" rel="next" title="vgenerator3">
-                <i class="fa fa-chevron-left"></i> vgenerator3
+              <a href="/2018/07/11/vgenerator3/" rel="next" title="vgenerator(三)">
+                <i class="fa fa-chevron-left"></i> vgenerator(三)
               </a>
             
           </div>
@@ -705,7 +709,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -758,7 +762,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装环境和需要的软件"><span class="nav-number">2.</span> <span class="nav-text">安装环境和需要的软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java安装"><span class="nav-number">3.</span> <span class="nav-text">Java安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nexus安装"><span class="nav-number">4.</span> <span class="nav-text">Nexus安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Maven"><span class="nav-number">4.1.</span> <span class="nav-text">配置Maven</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上传jar-发布项目"><span class="nav-number">4.2.</span> <span class="nav-text">上传jar 发布项目</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装环境和需要的软件"><span class="nav-number">2.</span> <span class="nav-text">安装环境和需要的软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java安装"><span class="nav-number">3.</span> <span class="nav-text">Java安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nexus安装"><span class="nav-number">4.</span> <span class="nav-text">Nexus安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Maven"><span class="nav-number">5.</span> <span class="nav-text">配置Maven</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传jar-发布项目"><span class="nav-number">6.</span> <span class="nav-text">上传jar 发布项目</span></a></li></ol></div>
             
 
           </div>

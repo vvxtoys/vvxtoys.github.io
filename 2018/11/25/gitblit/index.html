@@ -76,7 +76,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="git," />
 
 
 
@@ -94,16 +94,18 @@
 
 
 
-<meta name="description" content="向死而生">
-<meta property="og:type" content="website">
-<meta property="og:title" content="vvxtoys&#39;s Blog">
-<meta property="og:url" content="http://vvxtoys.cc/archives/2018/07/index.html">
+<meta name="description" content="前言  一直在学习新技术，我想都整理到博客上。公司还在坚持用svn，之前学过git都快要忘记了，此篇博客记录搭建基于gitblit的git服务器。当然直接使用linux也可以，不过我不是很熟悉，考虑到我的主语言是Java，也就用gitblit搭建了一个。">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用gitblit搭建git服务器">
+<meta property="og:url" content="http://vvxtoys.cc/2018/11/25/gitblit/index.html">
 <meta property="og:site_name" content="vvxtoys&#39;s Blog">
-<meta property="og:description" content="向死而生">
+<meta property="og:description" content="前言  一直在学习新技术，我想都整理到博客上。公司还在坚持用svn，之前学过git都快要忘记了，此篇博客记录搭建基于gitblit的git服务器。当然直接使用linux也可以，不过我不是很熟悉，考虑到我的主语言是Java，也就用gitblit搭建了一个。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-25T08:21:52.122Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vvxtoys&#39;s Blog">
-<meta name="twitter:description" content="向死而生">
+<meta name="twitter:title" content="使用gitblit搭建git服务器">
+<meta name="twitter:description" content="前言  一直在学习新技术，我想都整理到博客上。公司还在坚持用svn，之前学过git都快要忘记了，此篇博客记录搭建基于gitblit的git服务器。当然直接使用linux也可以，不过我不是很熟悉，考虑到我的主语言是Java，也就用gitblit搭建了一个。">
 
 
 
@@ -131,7 +133,7 @@
 
 
 
-  <link rel="canonical" href="http://vvxtoys.cc/archives/2018/07/"/>
+  <link rel="canonical" href="http://vvxtoys.cc/2018/11/25/gitblit/"/>
 
 
 
@@ -151,7 +153,7 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-  <title>归档 | vvxtoys's Blog</title>
+  <title>使用gitblit搭建git服务器 | vvxtoys's Blog</title>
   
 
 
@@ -188,7 +190,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -326,288 +328,219 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 12 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2018">2018</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/11/vgenerator3/" itemprop="url">
-              
-                <span itemprop="name">逆向工程vgenerator(三)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-11T14:00:26+08:00"
-              content="2018-07-11" >
-          07-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/11/vgenerator2/" itemprop="url">
-              
-                <span itemprop="name">逆向工程vgenerator(二)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-11T14:00:11+08:00"
-              content="2018-07-11" >
-          07-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/11/vgenerator1/" itemprop="url">
-              
-                <span itemprop="name">逆向工程vgenerator(一)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-11T13:59:47+08:00"
-              content="2018-07-11" >
-          07-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/10/auto-getset/" itemprop="url">
-              
-                <span itemprop="name">自动生成构造方法、getter、setter</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-10T22:01:25+08:00"
-              content="2018-07-10" >
-          07-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/10/poi-simpleDemo/" itemprop="url">
-              
-                <span itemprop="name">POI导入demo</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-10T22:01:07+08:00"
-              content="2018-07-10" >
-          07-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/10/PoiExcel-import/" itemprop="url">
-              
-                <span itemprop="name">POI导入工具类</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-10T14:53:07+08:00"
-              content="2018-07-10" >
-          07-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/10/DateUtil/" itemprop="url">
-              
-                <span itemprop="name">Java日期处理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-10T14:09:51+08:00"
-              content="2018-07-10" >
-          07-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://vvxtoys.cc/2018/11/25/gitblit/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="vvxtoys">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://i.loli.net/2018/07/10/5b446cec2d388.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="vvxtoys's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">使用gitblit搭建git服务器</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-25T13:24:00+08:00">
+                2018-11-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Server/" itemprop="url" rel="index">
+                    <span itemprop="name">Server</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/25/gitblit/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/11/25/gitblit/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/11/25/gitblit/" class="leancloud_visitors" data-flag-title="使用gitblit搭建git服务器">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>  一直在学习新技术，我想都整理到博客上。公司还在坚持用svn，之前学过git都快要忘记了，此篇博客记录搭建基于gitblit的git服务器。当然直接使用linux也可以，不过我不是很熟悉，考虑到我的主语言是Java，也就用gitblit搭建了一个。</p>
+<a id="more"></a>
+<h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Windows server 2016</div><div class="line"></div><div class="line">Centos 7</div><div class="line"></div><div class="line">jdk8</div><div class="line"></div><div class="line">gitblit1.8</div></pre></td></tr></table></figure>
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">官网:http://www.gitblit.com/</div></pre></td></tr></table></figure>
+<h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><h4 id="解压文件"><a href="#解压文件" class="headerlink" title="解压文件"></a>解压文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gitblit-1.8.0.zip</div></pre></td></tr></table></figure>
+<h4 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">/data/defaults.properties</div><div class="line">修改属性</div><div class="line">git.repositoriesFolder = $&#123;baseFolder&#125;/git -&gt; &#123;资源库地址&#125;</div><div class="line">server.httpPort = <span class="number">0</span> -&gt; &#123;自定义端口号&#125;</div><div class="line">server.httpsBindInterface =  -&gt; &#123;localhost&#125;</div></pre></td></tr></table></figure>
+<h4 id="注册服务"><a href="#注册服务" class="headerlink" title="注册服务"></a>注册服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">/installService.cmd</div><div class="line">在SET ARCH=amd64下添加</div><div class="line">SET CD=&#123;gitblit解压目录&#125;</div><div class="line">修改</div><div class="line">--StartParams = &quot;&quot; </div><div class="line">管理员身份运行此文件然后启动服务</div></pre></td></tr></table></figure>
+<h4 id="开放端口"><a href="#开放端口" class="headerlink" title="开放端口"></a>开放端口</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">关闭防火墙或者建立端口开放规则</div></pre></td></tr></table></figure>
+<h4 id="登陆"><a href="#登陆" class="headerlink" title="登陆"></a>登陆</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">登陆 	ip:配置的端口号</div><div class="line">初始账户密码 admin admin</div></pre></td></tr></table></figure>
+<h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><h4 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -zxvf gitblit-1.8.0.tar.gz</div></pre></td></tr></table></figure>
+<h4 id="修改配置文件-1"><a href="#修改配置文件-1" class="headerlink" title="修改配置文件"></a>修改配置文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">需要修改的项同window</div></pre></td></tr></table></figure>
+<h4 id="开放端口-1"><a href="#开放端口-1" class="headerlink" title="开放端口"></a>开放端口</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//开放端口</div><div class="line">firewall-cmd --zone=public --add-port=&#123;端口号&#125;/tcp --permanent </div><div class="line">//重新加载</div><div class="line">firewall-cmd --reload</div><div class="line">//重启防火墙</div><div class="line">systemctl restart firewalld.service</div></pre></td></tr></table></figure>
+<h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1.回到上级目录</div><div class="line">2，修改gitblit.sh</div><div class="line">修改为 </div><div class="line">nohup java -jar gitblit.jar --baseFolder data &gt;&#123;log地址&#125; &amp;</div><div class="line">3.bash gitblit.sh</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+    <div>
+  
+    
+<div id="license_title">
+<span><strong>作者: </strong>vvxtoys</span>
+<br>	
+<span>本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可</span>
+</div>
+
+  
+</div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag"># git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/19/使用nexus3.x搭建maven私服/" rel="next" title="使用nexus3.x搭建maven私服">
+                <i class="fa fa-chevron-left"></i> 使用nexus3.x搭建maven私服
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/25/vim/" rel="prev" title="vim常用命令">
+                vim常用命令 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -615,6 +548,18 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+      <script id="dsq-count-scr" src="//vvxtoys.disqus.com/count.js" async></script>
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -635,8 +580,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://i.loli.net/2018/07/10/5b446cec2d388.jpg"
@@ -705,6 +659,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境"><span class="nav-number">2.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载"><span class="nav-number">3.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows"><span class="nav-number">4.</span> <span class="nav-text">Windows</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解压文件"><span class="nav-number">4.1.</span> <span class="nav-text">解压文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改配置文件"><span class="nav-number">4.2.</span> <span class="nav-text">修改配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注册服务"><span class="nav-number">4.3.</span> <span class="nav-text">注册服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开放端口"><span class="nav-number">4.4.</span> <span class="nav-text">开放端口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#登陆"><span class="nav-number">4.5.</span> <span class="nav-text">登陆</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux"><span class="nav-number">5.</span> <span class="nav-text">Linux</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解压"><span class="nav-number">5.1.</span> <span class="nav-text">解压</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改配置文件-1"><span class="nav-number">5.2.</span> <span class="nav-text">修改配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开放端口-1"><span class="nav-number">5.3.</span> <span class="nav-text">开放端口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动"><span class="nav-number">5.4.</span> <span class="nav-text">启动</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -817,11 +787,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
 
 
   
@@ -840,6 +808,18 @@
       <script id="dsq-count-scr" src="https://vvxtoys.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://vvxtoys.cc/2018/11/25/gitblit/';
+          this.page.identifier = '2018/11/25/gitblit/';
+          this.page.title = '使用gitblit搭建git服务器';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://vvxtoys.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
@@ -1299,26 +1279,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
